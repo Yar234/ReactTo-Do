@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  background: #3b82f6; /* #0061ff */
+  padding: 16px 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.title {
+  cursor: default;
+  color: #ffffff;
+  font-size: 30px;
+}

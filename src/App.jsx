@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 import Header from "./components/Header/Header";
-import ListElement from "./components/ListElement/ListElement";
-import Input from "./components/TaskForm/TaskForm";
+import TaskElement from "./components/TaskElement/TaskElement";
+import TaskForm from "./components/TaskForm/TaskForm";
 
 import "./App.css";
 
@@ -15,8 +15,8 @@ function App() {
       <main>
         <h1>Hello</h1>
       </main>
-      <Input />
-      <ListElement title="Title" description="Description" />
+      <TaskForm />
+      <TaskElement title="Title" description="Description" />
     </>
   );
 }

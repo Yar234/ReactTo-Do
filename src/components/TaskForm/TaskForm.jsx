@@ -2,25 +2,23 @@ import { useState } from "react";
 
 import FormInput from "../FormInput/FormInput";
 import FormButton from "../FormButton/FormButton";
-import TaskList from "../TaskList/TaskList";
 
 import "./TaskForm.css";
 
-export default function TaskForm() {
+export default function TaskForm({ setTasks }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [tasks, setTasks] = useState([]);
 
   function handleCreate() {
     if (!title.trim() || !description.trim()) return;
-    setTasks([...tasks, { title, description }]);
+    setTasks((prev) => [{ title, description }, ...prev]);
     setTitle("");
     setDescription("");
   }
 
   return (
     <>
-      <div className="wrap">
+      <div className="wrap center">
         <form className="form" onSubmit={(e) => e.preventDefault()}>
           <FormInput
             placeholder="Title"
@@ -30,11 +28,11 @@ export default function TaskForm() {
           <FormInput
             placeholder="Description"
             value={description}
-            onChange={(e) => setDescription(e.target.value)} />
+            onChange={(e) => setDescription(e.target.value)}
+          />
           <FormButton text="CREATE" onClick={handleCreate} />
         </form>
       </div>
-      <TaskList tasks={tasks} />
     </>
   );
 }

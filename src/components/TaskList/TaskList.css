@@ -1,0 +1,17 @@
+.center {
+  width: 100%;
+  max-width: clamp(320px, 80vw, 1200px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 5vw, 40px);
+  padding-right: clamp(16px, 5vw, 40px);
+  box-sizing: border-box;
+}
+
+@media (min-width: 1921px) {
+  .center {
+    max-width: 1400px;
+    padding-left: clamp(40px, 4vw, 80px);
+    padding-right: clamp(40px, 4vw, 80px);
+  }
+}

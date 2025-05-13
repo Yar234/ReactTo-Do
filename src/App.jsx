@@ -1,22 +1,19 @@
 import { useState } from "react";
 
 import Header from "./components/Header/Header";
-import TaskElement from "./components/TaskElement/TaskElement";
+import TaskList from "./components/TaskList/TaskList";
 import TaskForm from "./components/TaskForm/TaskForm";
 
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [tasks, setTasks] = useState([]);
 
   return (
     <>
       <Header />
-      <main>
-        <h1>Hello</h1>
-      </main>
-      <TaskForm />
-      <TaskElement title="Title" description="Description" />
+      <TaskForm setTasks={setTasks} />
+      <TaskList tasks={tasks} />
     </>
   );
 }

@@ -1,16 +1,17 @@
 import TaskElement from "../TaskElement/TaskElement";
 
-export default function TaskList({ tasks = [] }) {
+import "./TaskList.css";
 
-    return (
-        <>
-            {tasks.map((task, index) => (
-                <TaskElement
-                    key={index}
-                    title={task.title}
-                    description={task.description}
-                />
-            ))}
-        </>
-    );
+export default function TaskList({ tasks = [] }) {
+  return (
+    <div className="task-list center">
+      {tasks.map((task, index) => (
+        <TaskElement
+          key={index}
+          title={task.title}
+          description={task.description}
+        />
+      ))}
+    </div>
+  );
 }

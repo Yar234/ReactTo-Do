@@ -3,7 +3,9 @@ import { useState } from "react";
 import FormInput from "../FormInput/FormInput";
 import FormButton from "../FormButton/FormButton";
 
-import "./TaskForm.css";
+import { nanoid } from "nanoid";
+
+import styles from "./TaskForm.module.css";
 
 export default function TaskForm({ setTasks }) {
   const [title, setTitle] = useState("");
@@ -11,15 +13,15 @@ export default function TaskForm({ setTasks }) {
 
   function handleCreate() {
     if (!title.trim() || !description.trim()) return;
-    setTasks((prev) => [{ title, description }, ...prev]);
+    setTasks((prev) => [{ id: nanoid(), title, description }, ...prev]);
     setTitle("");
     setDescription("");
   }
 
   return (
     <>
-      <div className="wrap center">
-        <form className="form" onSubmit={(e) => e.preventDefault()}>
+      <div className={`${styles.wrap} ${styles.center}`}>
+        <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
           <FormInput
             placeholder="Title"
             value={title}
@@ -30,7 +32,11 @@ export default function TaskForm({ setTasks }) {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
-          <FormButton text="CREATE" onClick={handleCreate} />
+          <FormButton
+            className={styles.button}
+            text="CREATE"
+            onClick={handleCreate}
+          />
         </form>
       </div>
     </>

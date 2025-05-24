@@ -1,15 +1,21 @@
 import TaskElement from "../TaskElement/TaskElement";
 
-import "./TaskList.css";
+import styles from "./TaskList.module.css";
 
-export default function TaskList({ tasks = [] }) {
+export default function TaskList({ tasks = [], setTasks }) {
+  function handleDelete(id) {
+    setTasks((prev) => prev.filter((task) => task.id !== id));
+  }
+
   return (
-    <div className="task-list center">
-      {tasks.map((task, index) => (
+    <div className={`${styles.task_list} ${styles.center}`}>
+      {tasks.map((task) => (
         <TaskElement
-          key={index}
+          key={task.id}
+          id={task.id}
           title={task.title}
           description={task.description}
+          onDelete={handleDelete}
         />
       ))}
     </div>

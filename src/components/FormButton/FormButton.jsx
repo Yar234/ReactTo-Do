@@ -1,9 +1,6 @@
-import "./FormButton.css";
-
-export default function FormButton({ text, onClick }) {
-
+export default function FormButton({ text, onClick, className }) {
   return (
-    <button onClick={onClick} className="button" type="button">
+    <button onClick={onClick} type="button" className={className}>
       {text}
     </button>
   );

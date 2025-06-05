@@ -28,13 +28,13 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
-.deleteButton {
+.button {
   background: none;
   border: none;
   cursor: pointer;
 }
 
-.delete_icon {
+.icon {
   width: 30px;
   height: 34px;
 }

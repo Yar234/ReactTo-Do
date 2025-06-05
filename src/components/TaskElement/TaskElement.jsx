@@ -1,6 +1,7 @@
 import styles from "./TaskElement.module.css";
 import FormButton from "../FormButton/FormButton";
-import icon from "./trash-icon.svg";
+import deleteIcon from "./trash-icon.svg";
+import checkIcon from "./check.svg";
 
 export default function TaskElement({ id, title, description, onDelete }) {
   return (
@@ -10,10 +11,15 @@ export default function TaskElement({ id, title, description, onDelete }) {
         <p className={styles.description}>{description}</p>
       </div>
       <div className={styles.buttons}>
-        <FormButton
-          className={styles.deleteButton}
+        <FormButton className={styles.button}
           text={
-            <img className={styles.delete_icon} src={icon} alt="trash button" />
+            <img className={styles.icon} src={checkIcon} alt="check button" />}
+          onClick={() => { }}
+        />
+        <FormButton
+          className={styles.button}
+          text={
+            <img className={styles.icon} src={deleteIcon} alt="trash button" />
           }
           onClick={() => onDelete(id)}
         />

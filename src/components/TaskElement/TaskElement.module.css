@@ -28,6 +28,12 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
 .button {
   background: none;
   border: none;

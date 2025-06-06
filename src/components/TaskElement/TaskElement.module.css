@@ -1,0 +1,46 @@
+.element {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.center {
+  width: 100%;
+  max-width: clamp(320px, 80vw, 1200px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 5vw, 40px);
+  padding-right: clamp(16px, 5vw, 40px);
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 18px;
+}
+
+.element:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icon {
+  width: 30px;
+  height: 34px;
+}

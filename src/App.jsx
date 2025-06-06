@@ -1,23 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Header from "./components/Header/Header";
-import ListElement from "./components/ListElement/ListElement";
-import Input from "./components/TaskForm/TaskForm";
+import Footer from "./components/Footer/Footer";
+import TaskList from "./components/TaskList/TaskList";
+import TaskForm from "./components/TaskForm/TaskForm";
 
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem("tasks");
+    return savedTasks ? JSON.parse(savedTasks) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   return (
-    <>
+    <div className="layout">
       <Header />
-      <main>
-        <h1>Hello</h1>
+      <main className="main">
+        <TaskForm setTasks={setTasks} />
+        <TaskList tasks={tasks} setTasks={setTasks} />
       </main>
-      <Input />
-      <ListElement title="Title" description="Description" />
-    </>
+      <Footer className="footer" content="© 2025 Yaroslav Grandson" />
+    </div>
   );
 }
 

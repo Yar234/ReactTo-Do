@@ -1,13 +1,7 @@
-import "./FormButton.css";
-
-export default function FormButton() {
-  function handleClick() {
-    console.log("Picun");
-  }
-
+export default function FormButton({ content, onClick, className }) {
   return (
-    <button onClick={handleClick} className="button">
-      CREATE
+    <button onClick={onClick} type="button" className={className}>
+      {content}
     </button>
   );
 }

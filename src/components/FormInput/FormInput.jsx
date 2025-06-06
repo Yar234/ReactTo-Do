@@ -1,12 +1,13 @@
-import "./FormInput.css";
+import styles from "./FormInput.module.css";
 
-export default function FormInput() {
+export default function FormInput({ placeholder, value, onChange }) {
   return (
     <input
-      className="input"
+      className={styles.input}
       type="text"
-      placeholder="Type your task"
-      id="input"
+      placeholder={placeholder}
+      value={value}
+      onChange={onChange}
     />
   );
 }

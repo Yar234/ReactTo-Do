@@ -15,3 +15,13 @@
     padding-right: clamp(40px, 4vw, 80px);
   }
 }
+
+.tasks_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.title {
+  margin-bottom: 24px;
+}

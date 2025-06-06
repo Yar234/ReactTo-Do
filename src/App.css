@@ -10,10 +10,10 @@
 
 .footer {
   min-height: 80px;
-  padding: 24px 84px;
+  padding: 14px 84px;
   background-color: #1e1e1e;
   color: #d1d5db;
   display: flex;
   align-items: center;
-  font-size: 24px;
+  font-size: 22px;
 }

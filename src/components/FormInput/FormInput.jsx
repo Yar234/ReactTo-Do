@@ -8,7 +8,6 @@ export default function FormInput({ placeholder, value, onChange }) {
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      id="input"
     />
   );
 }

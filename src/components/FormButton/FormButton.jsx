@@ -1,7 +1,7 @@
-export default function FormButton({ text, onClick, className }) {
+export default function FormButton({ content, onClick, className }) {
   return (
     <button onClick={onClick} type="button" className={className}>
-      {text}
+      {content}
     </button>
   );
 }

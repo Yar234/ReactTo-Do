@@ -10,10 +10,11 @@ import styles from "./TaskForm.module.css";
 export default function TaskForm({ setTasks }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [isDone, setIsDone] = useState(false);
 
   function handleCreate() {
     if (!title.trim() || !description.trim()) return;
-    setTasks((prev) => [{ id: nanoid(), title, description }, ...prev]);
+    setTasks((prev) => [{ id: nanoid(), title, description, isDone }, ...prev]);
     setTitle("");
     setDescription("");
   }
@@ -34,7 +35,7 @@ export default function TaskForm({ setTasks }) {
           />
           <FormButton
             className={styles.button}
-            text="CREATE"
+            content="CREATE"
             onClick={handleCreate}
           />
         </form>

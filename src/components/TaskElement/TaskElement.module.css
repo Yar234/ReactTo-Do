@@ -22,6 +22,15 @@
 
 .title {
   font-size: 18px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.description {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
 }
 
 .element:hover {
@@ -43,4 +52,11 @@
 .icon {
   width: 30px;
   height: 34px;
+}
+
+.content {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  max-width: 900px;
 }
